@@ -3,6 +3,8 @@
     padding-bottom: 0.5em;
     padding-top: 1em;
     padding-right: 1em;
+    border-radius: 0.35rem !important;
+    margin-bottom: 10px;
 }
 .highlight .c { color: #75715e } /* Comment */
 .highlight .err { color: #960050; background-color: #1e0010 } /* Error */
