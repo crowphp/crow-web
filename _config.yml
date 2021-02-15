@@ -30,8 +30,8 @@ theme: minima
 plugins:
   - jekyll-feed
 
-url: crowphp.github.io
-baseurl: /crow-web
+url: crowphp.com
+baseurl: /
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
