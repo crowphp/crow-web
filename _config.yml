@@ -33,17 +33,17 @@ plugins:
   - jekyll-toc
 
 url: crowphp.com
-baseurl: /
+baseurl:
 
 toc:
   min_level: 1
-  max_level: 6
+  max_level: 2
   ordered_list: false
   no_toc_section_class: no_toc_section
   list_id: toc
-  list_class: nav flex-column
+  list_class: table-of-contents
   sublist_class: ''
-  item_class: nav-item nav-link
+  item_class: toc_item
   item_prefix: toc-
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

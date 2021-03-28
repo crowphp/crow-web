@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="/assets/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="/assets/code.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/toc.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <!--  <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon-180x180.png"/>
+    <link rel="manifest" href="/site.webmanifest"/>
+    <meta name="viewport" content="width=device-width"/>
+    <meta charSet="utf-8"/>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>--><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Routing - CrowPHP an expressive framework for PHP | Web framework for PHP</title>
+<meta name="generator" content="Jekyll v3.8.6" />
+<meta property="og:title" content="Routing - CrowPHP an expressive framework for PHP" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Fast un-opinionated minimalist web framework and server for PHP built on top of battle tested Async PHP servers (SwoolePHP and ReactPHP). CrowPHP lets you build real microservices in PHP without the use of PHP-FPM/Nginx or Apache." />
+<meta property="og:description" content="Fast un-opinionated minimalist web framework and server for PHP built on top of battle tested Async PHP servers (SwoolePHP and ReactPHP). CrowPHP lets you build real microservices in PHP without the use of PHP-FPM/Nginx or Apache." />
+<link rel="canonical" href="http://localhost:4000/docs/0.x/routing" />
+<meta property="og:url" content="http://localhost:4000/docs/0.x/routing" />
+<meta property="og:site_name" content="Web framework for PHP" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/docs/0.x/routing","headline":"Routing - CrowPHP an expressive framework for PHP","description":"Fast un-opinionated minimalist web framework and server for PHP built on top of battle tested Async PHP servers (SwoolePHP and ReactPHP). CrowPHP lets you build real microservices in PHP without the use of PHP-FPM/Nginx or Apache.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Web framework for PHP" /></head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <nav class="col-md-3 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                  <div class="container" style="margin-top: 20px;">
+                    <a class="navbar-brand" href="/">
+                        <img src="/assets/crow-logo.svg" alt="" width="200">
+                    </a>
+                  </div>
+                  
+                  <ul class="nav flex-column">
+    <li class="nav-item">
+        <a class="nav-link" href="/docs/0.x">
+            Getting Started
+        </a>
+        <ul class="sub-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/docs/0.x/#why-crowphp">
+                    Why CrowPHP?
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/docs/0.x/#your-first-crowphp-microservice">
+                    Your First CrowPHP Microservice
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/docs/0.x/routing">
+            Routing
+        </a>
+        <ul class="sub-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/docs/0.x/routing/#route-methods">
+                    Route methods
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/docs/0.x/routing/#route-paths">
+                    Route paths
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/docs/0.x/routing/#route-parameters">
+                    Route parameters
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/docs/0.x/routing/#route-groups">
+                    Route groups
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/docs/0.x/middlewares">
+            Middlewares
+        </a>
+
+        <ul class="sub-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/docs/0.x/middlewares/#defining-a-middleware">
+                    Defining a middleware
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/docs/0.x/middlewares/#types-of-middlewares">
+                    Types of middlewares
+                </a>
+            </li>
+
+
+        </ul>
+    </li>
+</ul>
+
+
+                </div>
+              </nav>
+
+              <main role="main" class="col-md-9 ml-sm-auto px-4"><div style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;" class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                  <h1 class="h2">Documentation</h1>
+                  <!-- <div class="btn-toolbar mb-2 mb-md-0">
+                    <div class="btn-group mr-2">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                      This week
+                    </button>
+                  </div> -->
+
+                </div>
+                <div class="toc_container">
+                  <ul id="toc" class="table-of-contents">
+<li class="toc_item toc-h1"><a href="#routing">Routing</a>
+<ul>
+<li class="toc_item toc-h2"><a href="#route-methods">Route methods</a></li>
+<li class="toc_item toc-h2"><a href="#route-paths">Route paths</a></li>
+<li class="toc_item toc-h2"><a href="#route-parameters">Route parameters</a></li>
+<li class="toc_item toc-h2"><a href="#route-groups">Route groups</a></li>
+</ul>
+</li>
+</ul>
+                </div>
+                <h1 id="routing">
+<a class="anchor" href="#routing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Routing</h1>
+<p>Routing refers to determining how an application responds to a client request to a particular endpoint, 
+which is a URI (or path) and a specific HTTP request method (GET, POST, and so on).</p>
+
+<p>Each route can have one or more handler functions, which are executed when the route is matched.</p>
+
+<p>Route definition takes the following structure:</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$router</span><span class="o">-&gt;</span><span class="p">{</span><span class="nx">method</span><span class="p">}({</span><span class="nx">path</span><span class="p">},</span> <span class="p">{</span><span class="nx">handler</span><span class="p">});</span>
+</code></pre></div></div>
+
+<ul>
+  <li>$router is an instance of <code class="language-plaintext highlighter-rouge">Crow\Router\Factory::make()</code>.</li>
+  <li>{method} is an HTTP request method, in lowercase.</li>
+  <li>{path} is a path on the server.</li>
+  <li>{handler} is the function executed when the route is matched.</li>
+</ul>
+
+<p>This tutorial assumes that an instance of CrowServer named <code class="language-plaintext highlighter-rouge">$app</code> and <code class="language-plaintext highlighter-rouge">$router</code> is created and the server is running.
+If you are not familiar with creating an app and starting it, see the Hello world example on the home page.</p>
+
+<p>The most basic CrowPHP routes accept a URI and a closure, providing a very simple and expressive method of defining routes and behavior without complicated routing configurations.</p>
+
+<h2 id="route-methods">
+<a class="anchor" href="#route-methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Route methods</h2>
+<p>A route method is derived from one of the HTTP methods, and is attached to an instance of the <code class="language-plaintext highlighter-rouge">router</code> class.</p>
+
+<p>The following code is an example of routes that are defined for the GET and the POST methods to the root of the app.</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// GET method</span>
+<span class="nv">$router</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">RequestInterface</span> <span class="nv">$request</span><span class="p">,</span> <span class="nx">ResponseInterface</span> <span class="nv">$response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">getBody</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">write</span><span class="p">(</span><span class="s1">'Hello World get request'</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">});</span>
+
+<span class="c1">//POST method</span>
+<span class="nv">$router</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">RequestInterface</span> <span class="nv">$request</span><span class="p">,</span> <span class="nx">ResponseInterface</span> <span class="nv">$response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">getBody</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">write</span><span class="p">(</span><span class="s1">'Hello World post request'</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></div></div>
+<p>CrowPHP supports methods that correspond to all HTTP request methods: get, post, and so on. For a full list, see $router-&gt;{method}.</p>
+
+<h2 id="route-paths">
+<a class="anchor" href="#route-paths" aria-hidden="true"><span class="octicon octicon-link"></span></a>Route paths</h2>
+<p>By default the route path pattern uses a syntax where {foo} specifies a placeholder with name foo and matching the regex [^/]+. 
+To adjust the pattern the placeholder matches, you can specify a custom pattern by writing {bar:[0-9]+}. Some examples:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Matches /user/42, but not /user/xyz</span>
+<span class="nv">$router</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'/user/{id:\d+}'</span><span class="p">,</span> <span class="s1">'handler'</span><span class="p">);</span>
+
+<span class="c1">// Matches /user/foobar, but not /user/foo/bar</span>
+<span class="nv">$router</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'/user/{name}'</span><span class="p">,</span> <span class="s1">'handler'</span><span class="p">);</span>
+
+<span class="c1">// Matches /user/foo/bar as well</span>
+<span class="nv">$router</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'/user/{name:.+}'</span><span class="p">,</span> <span class="s1">'handler'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Custom patterns for route placeholders cannot use capturing groups. 
+For example {lang:(en|de)} is not a valid placeholder, because () is a capturing group. 
+Instead you can use either {lang:en|de} or {lang:(?:en|de)}.</p>
+
+<p>Furthermore parts of the route enclosed in […] are considered optional, so that /foo[bar] will match both /foo and /foobar.
+Optional parts are only supported in a trailing position, not in the middle of a route.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// This route</span>
+<span class="nv">$router</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'/user/{id:\d+}[/{name}]'</span><span class="p">,</span> <span class="s1">'handler'</span><span class="p">);</span>
+<span class="c1">// Is equivalent to these two routes</span>
+<span class="nv">$router</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'/user/{id:\d+}'</span><span class="p">,</span> <span class="s1">'handler'</span><span class="p">);</span>
+<span class="nv">$router</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'/user/{id:\d+}/{name}'</span><span class="p">,</span> <span class="s1">'handler'</span><span class="p">);</span>
+
+<span class="c1">// Multiple nested optional parts are possible as well</span>
+<span class="nv">$router</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'/user[/{id:\d+}[/{name}]]'</span><span class="p">,</span> <span class="s1">'handler'</span><span class="p">);</span>
+
+<span class="c1">// This route is NOT valid, because optional parts can only occur at the end</span>
+<span class="nv">$router</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'/user[/{id:\d+}]/{name}'</span><span class="p">,</span> <span class="s1">'handler'</span><span class="p">);</span>
+
+</code></pre></div></div>
+
+<p>The $handler parameter does not necessarily have to be a callback, it could also be a controller class name or any other kind of data you wish to associate with the route. FastRoute only tells you which handler corresponds to your URI, how you interpret it is up to you.
+Shortcut methods for common request methods</p>
+
+<p>For the GET, POST, PUT, PATCH, DELETE and HEAD request methods shortcut methods are available. For example</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$router</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'/get-route'</span><span class="p">,</span> <span class="s1">'get_handler'</span><span class="p">);</span>
+<span class="nv">$router</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="s1">'/post-route'</span><span class="p">,</span> <span class="s1">'post_handler'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Is equivalent to:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$router</span><span class="o">-&gt;</span><span class="na">addRoute</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span> <span class="s1">'/get-route'</span><span class="p">,</span> <span class="s1">'get_handler'</span><span class="p">);</span>
+<span class="nv">$router</span><span class="o">-&gt;</span><span class="na">addRoute</span><span class="p">(</span><span class="s1">'POST'</span><span class="p">,</span> <span class="s1">'/post-route'</span><span class="p">,</span> <span class="s1">'post_handler'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="route-parameters">
+<a class="anchor" href="#route-parameters" aria-hidden="true"><span class="octicon octicon-link"></span></a>Route parameters</h2>
+
+<p>Sometimes you will need to capture segments of the URI within your route. For example, you may need to capture a user’s ID from the URL. You may do so by defining route parameters:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$router</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'/user/{id}'</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">RequestInterface</span> <span class="nv">$request</span><span class="p">,</span> <span class="nx">ResponseInterface</span> <span class="nv">$response</span><span class="p">,</span> <span class="nv">$id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">getBody</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">write</span><span class="p">(</span><span class="s1">'my name is='</span><span class="o">.</span><span class="nv">$name</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>You may define as many route parameters as required by your route:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$router</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'/posts/{post}/comments/{comment}'</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span>
+    <span class="nx">RequestInterface</span> <span class="nv">$request</span><span class="p">,</span> 
+    <span class="nx">ResponseInterface</span> <span class="nv">$response</span><span class="p">,</span> <span class="nv">$post</span><span class="p">,</span> <span class="nv">$comment</span><span class="p">)</span> 
+<span class="p">{</span>
+    <span class="c1">//</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Route parameters are always encased within {} braces and should consist of alphabetic characters. Underscores (_) are also acceptable within route parameter names. Route parameters are injected into route callbacks / controllers based on their order - the names of the route callback / controller arguments do not matter.</p>
+
+<h2 id="route-groups">
+<a class="anchor" href="#route-groups" aria-hidden="true"><span class="octicon octicon-link"></span></a>Route groups</h2>
+
+<p>Additionally, you can specify routes inside of a group. All routes defined inside a group will have a common prefix.</p>
+
+<p>For example, defining your routes as:</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$router</span><span class="o">-&gt;</span><span class="na">addGroup</span><span class="p">(</span><span class="s1">'/admin'</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">RouterInterfave</span> <span class="nv">$router</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$router</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'/do-something'</span><span class="p">,</span> <span class="s1">'handler'</span><span class="p">);</span>
+    <span class="nv">$router</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'/do-another-thing'</span><span class="p">,</span> <span class="s1">'handler'</span><span class="p">);</span>
+    <span class="nv">$router</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'/do-something-else'</span><span class="p">,</span> <span class="s1">'handler'</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Will have the same result as:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$router</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'/admin/do-something'</span><span class="p">,</span> <span class="s1">'handler'</span><span class="p">);</span>
+<span class="nv">$router</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'/admin/do-another-thing'</span><span class="p">,</span> <span class="s1">'handler'</span><span class="p">);</span>
+<span class="nv">$router</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span> <span class="s1">'/admin/do-something-else'</span><span class="p">,</span> <span class="s1">'handler'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Nested groups are also supported, in which case the prefixes of all the nested groups are combined.</p>
+
+                </div>
+
+              </main>
+        </div>
+
+    </div>
+
+<footer>
+    <!-- Grid container -->
+    <div class="container text-center p-4">
+        <!--Grid row-->
+        <div class="row">
+            <div class="col">
+                <nav class="navbar navbar-expand-lg navbar-light">
+
+                    <div class="collapse navbar-collapse">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item"><a class="nav-link" href="/">Home </a></li>
+                            <li class="nav-item"><a class="nav-link" href="/#installation"> Installation </a></li>
+                            <li class="nav-item"><a class="nav-link" href="#"> Documentation </a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                <img src="https://github.com/crowphp/crow/workflows/build/badge.svg">
+                <img src="https://img.shields.io/github/license/crowphp/crow">
+                <img src="https://img.shields.io/endpoint?url=https://badger.crowphp.com/coverage/master">
+            </div>
+        </div>
+        <!--Grid row-->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center pb-5">
+        © 2021 Copyright crowphp.com
+    </div>
+    <!-- Copyright -->
+</footer>
+
+
+</body>
+</html>

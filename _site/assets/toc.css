@@ -1,0 +1,40 @@
+.table-of-contents {
+    width: auto;
+    background: #eee;
+    font-size: 0.8em;
+    padding: 1em 2em;
+    margin: 0 0 0.5em 0.5em;
+}
+    
+.table-of-contents .toc_item {
+    list-style-type: '# ';
+}
+
+.table-of-contents .toc-h1 {
+    font-weight: bold;
+}
+
+.table-of-contents .toc-h2 {
+    font-weight: normal;
+}
+.table-of-contents .sublist {
+    margin: 0 0 .6em 0;
+    list-style-type: none;
+}
+
+.table-of-contents a {
+    text-decoration: none;
+    color: #3D5AFE;
+}
+.toc_container {
+        display: table;
+        margin-bottom: 1em;
+        padding: 20px;
+        width: auto;
+}
+
+
+.sub-nav {
+    list-style-type: none;
+    font-size: 14px;
+}
