@@ -42,12 +42,12 @@
         </a>
         <ul class="sub-nav">
             <li class="nav-item">
-                <a class="nav-link" href="/docs/0.x/#why-crowphp">
+                <a class="nav-link" href="/docs/0.x#why-crowphp">
                     Why CrowPHP?
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/docs/0.x/#your-first-crowphp-microservice">
+                <a class="nav-link" href="/docs/0.x#your-first-crowphp-microservice">
                     Your First CrowPHP Microservice
                 </a>
             </li>
@@ -59,22 +59,22 @@
         </a>
         <ul class="sub-nav">
             <li class="nav-item">
-                <a class="nav-link" href="/docs/0.x/routing/#route-methods">
+                <a class="nav-link" href="/docs/0.x/routing#route-methods">
                     Route methods
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/docs/0.x/routing/#route-paths">
+                <a class="nav-link" href="/docs/0.x/routing#route-paths">
                     Route paths
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/docs/0.x/routing/#route-parameters">
+                <a class="nav-link" href="/docs/0.x/routing#route-parameters">
                     Route parameters
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/docs/0.x/routing/#route-groups">
+                <a class="nav-link" href="/docs/0.x/routing#route-groups">
                     Route groups
                 </a>
             </li>
@@ -87,12 +87,12 @@
 
         <ul class="sub-nav">
             <li class="nav-item">
-                <a class="nav-link" href="/docs/0.x/middlewares/#defining-a-middleware">
+                <a class="nav-link" href="/docs/0.x/middlewares#defining-a-middleware">
                     Defining a middleware
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/docs/0.x/middlewares/#types-of-middlewares">
+                <a class="nav-link" href="/docs/0.x/middlewares#types-of-middlewares">
                     Types of middlewares
                 </a>
             </li>
@@ -122,36 +122,33 @@
 
                 </div>
                 <div class="toc_container">
-                  <ul id="toc" class="table-of-contents">
+                 <!-- <ul id="toc" class="table-of-contents">
 <li class="toc_item toc-h1"><a href="#why-crowphp">Why CrowPHP?</a></li>
 <li class="toc_item toc-h1"><a href="#your-first-crowphp-microservice">Your First CrowPHP Microservice</a>
 <ul>
 <li class="toc_item toc-h2"><a href="#docker-example">Docker Example</a></li>
 </ul>
 </li>
-</ul>
+</ul> -->
+                 <ul><li><a href="#why-crowphp">Why CrowPHP?</a></li><li><a href="#your-first-crowphp-microservice">Your First CrowPHP Microservice</a><ul><li><a href="#docker-example">Docker Example</a><ul><li><a href="#docker-file">Docker File</a></li><li><a href="#docker-compose-file">Docker Compose File</a></li></ul></li></ul></li></ul>
+
                 </div>
-                <h1 id="why-crowphp">
-<a class="anchor" href="#why-crowphp" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why CrowPHP?</h1>
+                <h1 id="why-crowphp">Why CrowPHP?</h1>
 
 <p>PHP has grown a lot as a language it has a mature ecosystem and a vibrant community, for PHP to become a goto language for modern-microservices and container oriented ecosystem we lacked a way to deploy our web services in a stand-alone PHP, well not any more, with the advancements in asynchronous and concurrent PHP environment provided by platforms like SwoolePHP and ReactPHP it’s not a dream any more to run your web services on stand-alone PHP and here comes CrowPHP to provide an elegant and un-opinionated framework on top of SwoolePHP and ReactPHP HTTP servers.</p>
 
-<h1 id="your-first-crowphp-microservice">
-<a class="anchor" href="#your-first-crowphp-microservice" aria-hidden="true"><span class="octicon octicon-link"></span></a>Your First CrowPHP Microservice</h1>
+<h1 id="your-first-crowphp-microservice">Your First CrowPHP Microservice</h1>
 
 <p>Before we start with the crowPHP lets make sure you have the right system requirements.</p>
 
 <ul>
   <li>PHP-CLI version 8 or above.</li>
   <li>composer package manager for PHP</li>
-  <li>PHP pear package manager <code class="language-plaintext highlighter-rouge">pecl</code>
-</li>
-  <li>SwoolePHP latest version <code class="language-plaintext highlighter-rouge">pecl install swoole</code>
-</li>
+  <li>PHP pear package manager <code class="language-plaintext highlighter-rouge">pecl</code></li>
+  <li>SwoolePHP latest version <code class="language-plaintext highlighter-rouge">pecl install swoole</code></li>
 </ul>
 
-<h2 id="docker-example">
-<a class="anchor" href="#docker-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Docker Example</h2>
+<h2 id="docker-example">Docker Example</h2>
 <p>To follow this example I am assuming that you are familiar with <code class="language-plaintext highlighter-rouge">docker</code> and <code class="language-plaintext highlighter-rouge">docker-compose</code> and the latest versions are installed on your system.</p>
 
 <p>Let’s start with a new <code class="language-plaintext highlighter-rouge">composer.json</code> file in your project.</p>

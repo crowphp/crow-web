@@ -42,12 +42,12 @@
         </a>
         <ul class="sub-nav">
             <li class="nav-item">
-                <a class="nav-link" href="/docs/0.x/#why-crowphp">
+                <a class="nav-link" href="/docs/0.x#why-crowphp">
                     Why CrowPHP?
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/docs/0.x/#your-first-crowphp-microservice">
+                <a class="nav-link" href="/docs/0.x#your-first-crowphp-microservice">
                     Your First CrowPHP Microservice
                 </a>
             </li>
@@ -59,22 +59,22 @@
         </a>
         <ul class="sub-nav">
             <li class="nav-item">
-                <a class="nav-link" href="/docs/0.x/routing/#route-methods">
+                <a class="nav-link" href="/docs/0.x/routing#route-methods">
                     Route methods
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/docs/0.x/routing/#route-paths">
+                <a class="nav-link" href="/docs/0.x/routing#route-paths">
                     Route paths
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/docs/0.x/routing/#route-parameters">
+                <a class="nav-link" href="/docs/0.x/routing#route-parameters">
                     Route parameters
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/docs/0.x/routing/#route-groups">
+                <a class="nav-link" href="/docs/0.x/routing#route-groups">
                     Route groups
                 </a>
             </li>
@@ -87,12 +87,12 @@
 
         <ul class="sub-nav">
             <li class="nav-item">
-                <a class="nav-link" href="/docs/0.x/middlewares/#defining-a-middleware">
+                <a class="nav-link" href="/docs/0.x/middlewares#defining-a-middleware">
                     Defining a middleware
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/docs/0.x/middlewares/#types-of-middlewares">
+                <a class="nav-link" href="/docs/0.x/middlewares#types-of-middlewares">
                     Types of middlewares
                 </a>
             </li>
@@ -122,17 +122,18 @@
 
                 </div>
                 <div class="toc_container">
-                  <ul id="toc" class="table-of-contents">
+                 <!-- <ul id="toc" class="table-of-contents">
 <li class="toc_item toc-h2"><a href="#defining-a-middleware">Defining a middleware</a></li>
 <li class="toc_item toc-h2"><a href="#types-of-middlewares">Types of middlewares</a></li>
-</ul>
+</ul> -->
+                 <ul><li><a href="#defining-a-middleware">Defining a middleware</a></li><li><a href="#types-of-middlewares">Types of middlewares</a></li></ul>
+
                 </div>
                 <p>Middleware provide a convenient mechanism for inspecting and filtering HTTP requests entering your application. For example, Laravel includes a middleware that verifies the user of your application is authenticated. If the user is not authenticated, the middleware will redirect the user to your application’s login screen. However, if the user is authenticated, the middleware will allow the request to proceed further into the application.</p>
 
 <p>For example, CrowPHP by default uses a routing middleware and an exception handling middleware, CrowPHP follows <code class="language-plaintext highlighter-rouge">PSR-15</code> standard for middlewares so you can also use many readily available middlewares that implement <code class="language-plaintext highlighter-rouge">Psr\Http\Server\MiddlewareInterface</code> and its also very easy to write your custom middleware for example, a logging middleware might log all incoming requests to your application.</p>
 
-<h2 id="defining-a-middleware">
-<a class="anchor" href="#defining-a-middleware" aria-hidden="true"><span class="octicon octicon-link"></span></a>Defining a middleware</h2>
+<h2 id="defining-a-middleware">Defining a middleware</h2>
 
 <p>To create a new middleware, create a new <code class="language-plaintext highlighter-rouge">PHP</code> file and for this example we will call it <code class="language-plaintext highlighter-rouge">EnsureTokenIsValid.php</code>. We will create a new class <code class="language-plaintext highlighter-rouge">EnsureTokenIsValid</code> that implements</p>
 
@@ -181,8 +182,7 @@
 
 </code></pre></div></div>
 
-<h2 id="types-of-middlewares">
-<a class="anchor" href="#types-of-middlewares" aria-hidden="true"><span class="octicon octicon-link"></span></a>Types of middlewares</h2>
+<h2 id="types-of-middlewares">Types of middlewares</h2>
 
 <p>CrowPHP has different types of middlewares and its important to understand them since they can be used for different purposes.</p>
 

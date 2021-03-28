@@ -33,9 +33,10 @@
 
                 </div>
                 <div class="toc_container">
-                  {{ content | toc_only }}
+                 <!-- {{ content | toc_only }} -->
+                 {% include toc.html html=content %}
                 </div>
-                {{ content | inject_anchors }}
+                {{ content }}
                 </div>
 
               </main>
