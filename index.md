@@ -4,7 +4,7 @@ title: Home
 permalink: /
 ---
 
-CrowPHP is a fast async web framework built on-top of SwoolePHP and ReactPHP. You can now build web services with just the CLI version of PHP on the platform of your choice.
+CrowPHP is a fast async web framework built on-top of SwoolePHP. You can now build web services with just the CLI version of PHP on the platform of your choice.
 
 ## Installation
 #### Requirements
